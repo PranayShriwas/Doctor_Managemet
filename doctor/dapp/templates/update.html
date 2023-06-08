@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>Update</title>
+</head>
+<body>
+
+<form method="post" action="/ureg/">
+    {% csrf_token %}
+  <div class="container">
+    <h1>Doctor Update</h1>
+    <hr>
+ 
+    <input type="hidden" name='hide' value="{{res.id}}" />
+  
+    <label ><b>Name</b></label>
+    <input type="text"  name="name" id="email" required>
+
+    <label ><b>Degree</b></label>
+    <input type="text" name="degree" id="email" required>
+
+    <label ><b>Contact</b></label>
+    <input type="text" name="contact" id="email" required>
+
+    <label ><b>Email</b></label>
+    <input type="text" name="email" id="email" required>
+
+    <label><b>Category</b></label>&nbsp
+    <select name="category">
+        <option>select catoegory</option>
+        <option>Leg </option>
+        <option>Eye </option>
+        <option>heart</option>
+        <option>lung </option>
+    </select>
+
+    <hr>
+
+    <button type="submit" class="registerbtn">Update</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Show Doctor Data <a href="/table/">Table </a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
