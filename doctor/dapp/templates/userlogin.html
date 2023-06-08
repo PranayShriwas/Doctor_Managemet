@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="{% static 'style.css' %}"/>
+    <title>Login</title>
+</head>
+<body>
+
+<form method="post" action="/login_reg/">
+  {% csrf_token %}
+  <div class="container">
+    <h1>User Login</h1>
+    {% for i in messages %}
+      <h4 style="color:red;">* {{i}}</h4>
+    {% endfor %}
+    <hr>
+    <label ><b>Email</b></label>
+    <input type="text" name="email" id="email" required>
+
+    <label ><b>Password</b></label>
+    <input type="password"  name="password" id="psw" required>
+
+    </select>
+
+    <hr>
+
+    <button type="submit" class="registerbtn">Login</button>
+  </div>
+  
+  <div class="container signin">
+    <p>Don't have an account? <a href="/usersignup/"> User Signup </a>.</p>
+  </div>
+</form>
+
+</body>
+</html>
